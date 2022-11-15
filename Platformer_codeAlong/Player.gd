@@ -38,13 +38,15 @@ var resetFALLGRAVITY
 #Player States
 var blue = false
 var green = true
-var state = MOVE
+var state = SHOWLEVEL
 var Changing = false
 
 enum {
 	MOVE
 	
 	CHANGE
+	
+	SHOWLEVEL
 }
 
 func _ready():
@@ -66,7 +68,8 @@ func _physics_process(_delta):
 	match state:
 		MOVE: Move(input)
 		CHANGE: change()
-
+		SHOWLEVEL: _SHOWLEVEL()
+		
 func Apply_friction():
 	velocity.x = move_toward(velocity.x,0, FRICTION)
 
@@ -78,7 +81,6 @@ func apply_gravity():
 
 
 func Move(input):
-	var on_Wall = is_on_wall()
 	if Changing  == true:
 		state = CHANGE
 	if input.x == 0:
@@ -145,8 +147,13 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "visible":
 		state = MOVE
 		Changing = false
-
-
+	if anim_name == "CameraSpeed":
+		$Camera2D.smoothing_speed = 4.5
+		state = MOVE
 func _on_AnimationPlayer_animation_started(anim_name):
 	if anim_name == "Change":
 		Changing = true
+
+func _SHOWLEVEL():
+	apply_gravity()
+	velocity = move_and_slide(velocity,Vector2.UP)
