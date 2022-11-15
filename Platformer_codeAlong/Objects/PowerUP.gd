@@ -4,7 +4,7 @@ var player
 
 onready var timout = $Timer
 
-export(bool) var tutLevel = false
+export(bool) var Should_Respawn = false
 export(float) var time_respawn_time = float(7.0)
 
 func _ready():
@@ -21,7 +21,7 @@ func _on_PowerUp_body_entered(body):
 
 
 func _on_Timer_timeout():
-	if tutLevel:
+	if Should_Respawn:
 		$CollisionShape2D.set_deferred("disabled",false)
 		show()
 	else:
