@@ -120,7 +120,8 @@ Y_Distance = 100
 Wrap = true
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 21, 96 )
+position = Vector2( 423, 479 )
+JUMP_RELEASE_FORCE = -10
 
 [node name="GOAL" parent="." instance=ExtResource( 10 )]
 position = Vector2( 442, 486 )

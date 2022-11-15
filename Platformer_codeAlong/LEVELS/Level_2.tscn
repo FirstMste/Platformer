@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://TileMaps/Plateform_TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Objects/PowerUP.tscn" type="PackedScene" id=8]
 [ext_resource path="res://coin.tscn" type="PackedScene" id=9]
 [ext_resource path="res://GOAL.tscn" type="PackedScene" id=10]
+[ext_resource path="res://LEVELS/Level_3.tscn" type="PackedScene" id=11]
 
 [node name="Level_2" type="Node2D"]
 script = ExtResource( 2 )
@@ -37,8 +38,22 @@ X_Distance = 75
 Y_Distance = 35
 
 [node name="tutorialText" parent="Objects" instance=ExtResource( 4 )]
-position = Vector2( 18, 120 )
-Text = "\"Shift\" to sprint hold and run to jump higher and further "
+position = Vector2( 76, 119 )
+Text = "\"Shift\" to sprint,  hold and run to jump higher and further "
+X_Distance = 35
+
+[node name="tutorialText4" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 12, -10 )
+Text = "Pick It up, the number is how long it will last"
+X_Distance = 25
+Y_Distance = 250
+Wrap = true
+
+[node name="tutorialText3" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 486, 75 )
+Text = "HOLD \"W\"!"
+X_Distance = 200
+Y_Distance = 200
 
 [node name="Spikes" parent="Objects" instance=ExtResource( 5 )]
 position = Vector2( 336, 433 )
@@ -89,8 +104,8 @@ position = Vector2( 584, 433 )
 position = Vector2( 601, 433 )
 
 [node name="PowerUp" parent="Objects" instance=ExtResource( 8 )]
-position = Vector2( 29, 84 )
-tutLevel = true
+position = Vector2( 48, 100 )
+Should_Respawn = true
 
 [node name="WalkingEnemy2" parent="Objects" instance=ExtResource( 7 )]
 position = Vector2( 949, 270 )
@@ -126,7 +141,9 @@ position = Vector2( 981, 86 )
 [node name="coin6" parent="Objects" instance=ExtResource( 9 )]
 position = Vector2( 999, 86 )
 
-[node name="GOAL" parent="Objects" instance=ExtResource( 10 )]
-position = Vector2( 1317, 54 )
-
 [node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1310, 45 )
+
+[node name="GOAL" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1327, 55 )
+NEXTLEVEL = ExtResource( 11 )

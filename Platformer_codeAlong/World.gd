@@ -54,4 +54,5 @@ func _FALLOFFSAFTEY():
 
 
 func Change_Level(NEXTLEVEL):
-	get_tree().change_scene_to(NEXTLEVEL)
+	var _current_level
+	_current_level = get_tree().change_scene_to(NEXTLEVEL)

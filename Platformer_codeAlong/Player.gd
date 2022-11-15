@@ -7,7 +7,7 @@ var velocity = Vector2.ZERO
 export(int) var JUMP_FORCE = -130
 export(int) var JUMPBOOST = -2
 export(int) var MAX_JUMPBOOST = -350
-export(int) var JUMP_RELEASE_FORCE = -70
+export(int) var JUMP_RELEASE_FORCE = -5
 export(int) var WALL_JUMP = 100
 export(int) var MAX_SPEED = 50
 export(int) var SprintBoost = 2 
@@ -17,7 +17,6 @@ export(int) var FRICTION = 10
 export(int) var GRAVITY = 4
 export(int) var FALL_GRAVITY = 4
 export(int) var MAX_WALL_JUMPS = 3
-export(int) var GRIPWALLSPEED = 1
 onready var sprite = $AnimatedSprite
 onready var coinsLab = $CanvasLayer/coins
 onready var animator = $AnimationPlayer
@@ -79,9 +78,10 @@ func apply_gravity():
 
 
 func Move(input):
+	var on_Wall = is_on_wall()
 	if Changing  == true:
 		state = CHANGE
-	if input.x == 0 and not is_on_wall():
+	if input.x == 0:
 		Apply_friction()
 		sprite.animation = "Idle"
 	else:
@@ -95,11 +95,6 @@ func Move(input):
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_up"):
 			velocity.y = JUMP_FORCE
-	elif is_on_wall():
-		if Input.is_action_just_pressed("ui_up") and MAX_WALL_JUMPS > 0:
-			velocity.x = input.x * -1 * WALL_JUMP
-			velocity.y = JUMP_FORCE 
-			MAX_WALL_JUMPS -= 1
 	else:
 		sprite.animation = "Jump"
 		if Input.is_action_just_released("ui_up") and velocity.y < JUMP_RELEASE_FORCE and not JUMP_FORCE < JumpForceReset:
@@ -110,8 +105,15 @@ func Move(input):
 			velocity.y = min(velocity.y, 300)
 		
 	
+	if is_on_wall() and not is_on_floor():
+		if Input.is_action_just_pressed("ui_up") and MAX_WALL_JUMPS > 0:
+			velocity.x = input.x * -1 * WALL_JUMP
+			velocity.y = JUMP_FORCE 
+			MAX_WALL_JUMPS -= 1
+	
+	
 	if JUMPPOWERUP and Input.is_action_pressed("Sprint"):
-		if input.x != 0 and is_on_floor() or is_on_wall():
+		if input.x != 0 and not is_on_floor() or not is_on_wall():
 			MAX_SPEED += SprintBoost
 			JUMP_FORCE += JUMPBOOST
 	else:

@@ -1,0 +1,103 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://fonts/cinnamon cake.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://MaineMenu.gd" type="Script" id=2]
+[ext_resource path="res://TileMaps/Plateform_TileMap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menu/MenuSprite.tscn" type="PackedScene" id=4]
+[ext_resource path="res://WalkingEnemy.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="DynamicFont" id=8]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[node name="MaineMenu" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeaderGameName" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -24.0
+margin_top = 24.0
+margin_right = 28.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 1 )
+text = "Untitled"
+
+[node name="Start" type="Button" parent="CanvasLayer"]
+margin_left = 124.0
+margin_top = 60.0
+margin_right = 210.0
+margin_bottom = 82.0
+custom_colors/font_color_focus = Color( 0.894118, 0.862745, 0.862745, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "Start Game"
+
+[node name="Quit" type="Button" parent="CanvasLayer"]
+margin_left = 279.0
+margin_top = 127.0
+margin_right = 316.0
+margin_bottom = 149.0
+custom_colors/font_color_focus = Color( 0.894118, 0.862745, 0.862745, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/disabled = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+text = "Quit"
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 181, 137 )
+
+[node name="TileMap" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( 65535, 7, 65537, 0, 7, 65538, 1, 7, 65538, 2, 7, 65539, 3, 0, 0, 4, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 131071, 7, 393217, 65536, 7, 393218, 65537, 7, 393218, 65538, 7, 393219, 65540, 0, 0, 65541, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 196607, 7, 393217, 131072, 7, 393218, 131073, 7, 393218, 131074, 7, 393219, 131076, 0, 0, 131077, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0, 262143, 7, 393217, 196608, 7, 393218, 196609, 7, 393218, 196610, 7, 393219, 196626, 0, 0, 327679, 7, 393217, 262144, 7, 393218, 262145, 7, 393218, 262146, 7, 393219, 262162, 0, 0, 393215, 7, 393217, 327680, 7, 393218, 327681, 7, 393218, 327682, 7, 393219, 327695, 7, 65537, 327696, 7, 65538, 327697, 7, 65538, 327698, 7, 65539, 458751, 7, 393217, 393216, 7, 393218, 393217, 7, 393218, 393218, 7, 65540, 393219, 7, 65538, 393220, 7, 65538, 393221, 7, 65539, 393231, 7, 393217, 393232, 7, 393218, 393233, 7, 393218, 393234, 7, 393219, 524287, 7, 393217, 458752, 7, 393218, 458753, 7, 393218, 458754, 7, 393218, 458755, 7, 393218, 458756, 7, 393218, 458757, 7, 393219, 458767, 7, 393217, 458768, 7, 393218, 458769, 7, 393218, 458770, 7, 393219, 589823, 7, 393217, 524288, 7, 393218, 524289, 7, 393218, 524290, 7, 393218, 524291, 7, 393218, 524292, 7, 393218, 524293, 7, 65540, 524294, 7, 65538, 524295, 7, 65538, 524296, 7, 65538, 524297, 7, 65538, 524298, 7, 65538, 524299, 7, 65538, 524300, 7, 65538, 524301, 7, 65538, 524302, 7, 65538, 524303, 7, 65541, 524304, 7, 393218, 524305, 7, 393218, 524306, 7, 393219, 655359, 7, 393217, 589824, 7, 393218, 589825, 7, 393218, 589826, 7, 393218, 589827, 7, 393218, 589828, 7, 393218, 589829, 7, 393218, 589830, 7, 393218, 589831, 7, 393218, 589832, 7, 393218, 589833, 7, 393218, 589834, 7, 393218, 589835, 7, 393218, 589836, 7, 393218, 589837, 7, 393218, 589838, 7, 393218, 589839, 7, 393218, 589840, 7, 393218, 589841, 7, 393218, 589842, 7, 393219, 720895, 7, 393217, 655360, 7, 393218, 655361, 7, 393218, 655362, 7, 393218, 655363, 7, 393218, 655364, 7, 393218, 655365, 7, 393218, 655366, 7, 393218, 655367, 7, 393218, 655368, 7, 393218, 655369, 7, 393218, 655370, 7, 393218, 655371, 7, 393218, 655372, 7, 393218, 655373, 7, 393218, 655374, 7, 393218, 655375, 7, 393218, 655376, 7, 393218, 655377, 7, 393218, 655378, 7, 393219, 786431, 7, 458753, 720896, 7, 458754, 720897, 7, 458754, 720898, 7, 458754, 720899, 7, 458754, 720900, 7, 458754, 720901, 7, 458754, 720902, 7, 458754, 720903, 7, 458754, 720904, 7, 458754, 720905, 7, 458754, 720906, 7, 458754, 720907, 7, 458754, 720908, 7, 458754, 720909, 7, 458754, 720910, 7, 458754, 720911, 7, 458754, 720912, 7, 458754, 720913, 7, 458754, 720914, 7, 458755 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = -2.0
+margin_right = 38.0
+margin_bottom = 40.0
+
+[node name="WalkingEnemy" parent="Control" instance=ExtResource( 5 )]
+position = Vector2( 73, 108 )
+CanDie = true
+
+[connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Quit" to="." method="_on_Quit_pressed"]

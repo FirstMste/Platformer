@@ -130,41 +130,41 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="tutorialText" parent="TEXT" instance=ExtResource( 10 )]
-position = Vector2( 45, 60 )
+position = Vector2( 45, 61 )
 Text = "Change yourself with the doors"
 X_Distance = 35
 Y_Distance = 100
 
 [node name="tutorialText4" parent="TEXT" instance=ExtResource( 10 )]
-position = Vector2( 141, 152 )
+position = Vector2( 140, 151 )
 Text = "   Space to Jump"
 X_Distance = 6
 v_align_Middle = true
 
 [node name="tutorialText2" parent="TEXT" instance=ExtResource( 10 )]
-position = Vector2( 183, 140 )
-Text = "Release \"SPACE\" to bounce off Walls"
+position = Vector2( 180, 128 )
+Text = "jump while on a wall"
 X_Distance = 25
 v_align_Middle = true
 Wrap = true
 
 [node name="tutorialText5" parent="TEXT" instance=ExtResource( 10 )]
-position = Vector2( 273, 80 )
+position = Vector2( 268, 79 )
 Text = "Spikes Hurt"
 X_Distance = 25
 v_align_Middle = true
 Wrap = true
 
 [node name="tutorialText6" parent="TEXT" instance=ExtResource( 10 )]
-position = Vector2( 381, 44 )
+position = Vector2( 374, 77 )
 Text = "Enemies Kill"
 X_Distance = 65
-Y_Distance = 65
+Y_Distance = 75
 v_align_Middle = true
 Wrap = true
 
 [node name="tutorialText7" parent="TEXT" instance=ExtResource( 10 )]
-position = Vector2( 587, 142 )
+position = Vector2( 582, 141 )
 Text = "Bounce on him"
 X_Distance = 75
 Y_Distance = 25
@@ -172,7 +172,7 @@ v_align_Middle = true
 Wrap = true
 
 [node name="tutorialText3" parent="TEXT" instance=ExtResource( 10 )]
-position = Vector2( 19, 157 )
+position = Vector2( 14, 156 )
 Text = "\"A\" and \"D\" to move"
 X_Distance = 20
 v_align_Middle = true
@@ -181,7 +181,7 @@ Wrap = true
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 707, 147 )
 JUMP_FORCE = -130
-JUMP_RELEASE_FORCE = -15
+JUMP_RELEASE_FORCE = -5
 
 [node name="GOAL" parent="." instance=ExtResource( 11 )]
 position = Vector2( 742, 164 )

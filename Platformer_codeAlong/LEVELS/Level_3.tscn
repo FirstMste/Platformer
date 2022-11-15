@@ -80,8 +80,8 @@ Should_Respawn = true
 time_respawn_time = 3.0
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 35, 37 )
-JUMP_FORCE = -190
+position = Vector2( 564, 144 )
+JUMP_FORCE = -180
 
 [node name="GOAL" parent="." instance=ExtResource( 1 )]
-position = Vector2( 584, 145 )
+position = Vector2( 583, 144 )
