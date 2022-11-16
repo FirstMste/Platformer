@@ -1,7 +1,4 @@
 extends KinematicBody2D
 
+# it breaks if i delete this script i dunno why
 
-
-
-func _physics_process(_delta):
-	pass
