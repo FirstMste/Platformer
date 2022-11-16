@@ -202,6 +202,7 @@ tile_data = PoolIntArray( 65535, 7, 65537, 0, 7, 65538, 1, 7, 65538, 2, 7, 65539
 
 [node name="MenuSprite" parent="." instance=ExtResource( 4 )]
 position = Vector2( 332, 83 )
+script = null
 
 [connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Quit" to="." method="_on_Quit_pressed"]
