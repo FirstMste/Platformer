@@ -18,7 +18,8 @@ func _process(_delta):
 
 
 func _on_ToMenu_pressed():
-	get_tree().change_scene("res://Menu/MaineMenu.tscn")
+	var _Current
+	_Current = get_tree().change_scene("res://Menu/MaineMenu.tscn")
 
 
 func _on_RESUME_pressed():

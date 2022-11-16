@@ -10,7 +10,8 @@ func _ready():
 
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://World.tscn")
+	var _Current
+	_Current = get_tree().change_scene("res://World.tscn")
 
 
 func _on_Quit_pressed():
