@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://SKINS/GreenSkin.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://fonts/cinnamon cake.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Menu/PauseMenu.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Curve" id=8]
 _data = [ Vector2( 0.0730337, 0.107955 ), 0.0, 0.0, 0, 0, Vector2( 0.398876, 0.526136 ), 0.0, 0.0, 0, 0, Vector2( 0.674157, 0.917045 ), 0.0, 0.0, 0, 0, Vector2( 0.921348, 0.144318 ), -4.75341, 0.0, 0, 0 ]
@@ -153,6 +154,10 @@ anims/CameraSpeed = SubResource( 13 )
 anims/Change = SubResource( 4 )
 anims/RESET = SubResource( 5 )
 anims/visible = SubResource( 6 )
+
+[node name="PauseMenu" parent="." instance=ExtResource( 4 )]
+physics_interpolation_mode = 2
+process_priority = 1
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_started"]

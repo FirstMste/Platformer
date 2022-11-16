@@ -17,10 +17,13 @@ export(int) var FRICTION = 10
 export(int) var GRAVITY = 4
 export(int) var FALL_GRAVITY = 4
 export(int) var MAX_WALL_JUMPS = 3
+
+
 onready var sprite = $AnimatedSprite
 onready var coinsLab = $CanvasLayer/coins
 onready var animator = $AnimationPlayer
 onready var Stars = $Stars
+onready var PauseMENU = $PauseMenu
 
 #Default Values
 var newSkin
@@ -34,6 +37,7 @@ var JUMPPOWERUP = false
 var Reset_Max_Wall_Jumps
 var resetGravity
 var resetFALLGRAVITY
+var is_paused = false
 
 #Player States
 var blue = false
@@ -59,6 +63,7 @@ func _ready():
 
 
 func _physics_process(_delta):
+	
 	apply_gravity()
 	var input = Vector2.ZERO
 	input.x = Input.get_axis("ui_left","ui_right")

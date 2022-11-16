@@ -1,0 +1,96 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://fonts/cinnamon cake.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Menu/PauseMenu.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="DynamicFont" id=8]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[node name="PauseMenu" type="CanvasLayer"]
+pause_mode = 2
+visible = false
+script = ExtResource( 2 )
+
+[node name="Paused" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -77.0
+margin_top = 18.0
+margin_right = 82.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 1 )
+text = "GAME PAUSED"
+
+[node name="RESUME" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.0
+margin_top = -29.0
+margin_right = 32.0
+margin_bottom = -9.0
+custom_colors/font_color_focus = Color( 0.803922, 0.756863, 0.756863, 1 )
+custom_colors/font_color = Color( 0.894118, 0.862745, 0.862745, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "RESUME"
+
+[node name="ToMenu" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = 3.0
+margin_right = 51.0
+margin_bottom = 23.0
+custom_colors/font_color_focus = Color( 0.803922, 0.756863, 0.756863, 1 )
+custom_colors/font_color = Color( 0.894118, 0.862745, 0.862745, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/disabled = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+text = "Back To Menu"
+
+[connection signal="pressed" from="RESUME" to="." method="_on_RESUME_pressed"]
+[connection signal="pressed" from="ToMenu" to="." method="_on_ToMenu_pressed"]

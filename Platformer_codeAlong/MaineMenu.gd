@@ -1,17 +1,18 @@
 extends Node2D
 
-var NewGame = preload("res://World.tscn")
-var current_level
+onready var Anim = $AnimationPlayer
 
 func _ready():
-	 VisualServer.set_default_clear_color(Color("#00FFFF"))
+	get_tree().paused = false
+	VisualServer.set_default_clear_color(Color("#00FFFF"))
 
 
 
 
 func _on_Button_pressed():
-	current_level = get_tree().change_scene_to(NewGame)
+	get_tree().change_scene("res://World.tscn")
 
 
 func _on_Quit_pressed():
 	get_tree().quit()
+
