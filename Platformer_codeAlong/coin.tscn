@@ -74,7 +74,6 @@ script = ExtResource( 3 )
 position = Vector2( 0, -5 )
 frames = SubResource( 3 )
 animation = "spin"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

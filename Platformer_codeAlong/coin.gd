@@ -8,5 +8,4 @@ func _on_coin_body_entered(body):
 	if body is Player and !colected:
 		body.coins += 1
 		colected = true
-		print(body.coins)
 		animate.play("collected")
