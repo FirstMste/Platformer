@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Teleport.gd" type="Script" id=1]
+
+[sub_resource type="Gradient" id=7]
+interpolation_mode = 2
+offsets = PoolRealArray( 0.0193548, 0.587097 )
+colors = PoolColorArray( 0, 0.811765, 0.14902, 1, 0.901316, 0.981424, 0.916022, 1 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
+width = 5
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0.0505618, 0.270455 ), 0.0, 0.0, 0, 0, Vector2( 0.97191, 0.152273 ), -5.27668, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+trail_divisor = 2
+emission_shape = 1
+emission_sphere_radius = 15.0
+flag_align_y = true
+flag_rotate_y = true
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+flatness = 0.66
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 30.0
+initial_velocity_random = 1.0
+angular_velocity = -720.0
+angular_velocity_random = 0.36
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.2
+linear_accel_random = 1.0
+radial_accel = 13.86
+tangential_accel = -25.74
+damping = 95.05
+damping_random = 0.63
+angle = 206.7
+angle_random = 1.0
+scale = 0.8
+scale_random = 1.0
+scale_curve = SubResource( 2 )
+color_ramp = SubResource( 8 )
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0, 0.811765, 0.14902, 1 )
+
+[sub_resource type="GradientTexture2D" id=5]
+gradient = SubResource( 4 )
+width = 1
+height = 1
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 3.0
+
+[node name="Teleport" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="Particles2D" type="Particles2D" parent="."]
+amount = 1000
+randomness = 1.0
+visibility_rect = Rect2( 0, 0, 0, 0 )
+local_coords = false
+process_material = SubResource( 3 )
+texture = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 12
+shape = SubResource( 6 )
+
+[connection signal="body_entered" from="." to="." method="_on_Teleport_body_entered"]
