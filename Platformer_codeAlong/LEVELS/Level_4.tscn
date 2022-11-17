@@ -180,7 +180,7 @@ position = Vector2( 639, 158 )
 position = Vector2( 150, 195 )
 
 [node name="ChangeSkinBlue" parent="Objects" instance=ExtResource( 11 )]
-position = Vector2( 683, -51 )
+position = Vector2( 683, -50 )
 
 [node name="Water9" parent="Objects" instance=ExtResource( 6 )]
 position = Vector2( 819, 270 )
@@ -249,7 +249,7 @@ Should_Respawn = true
 time_respawn_time = 6.0
 
 [node name="Teleport" parent="Objects" instance=ExtResource( 10 )]
-position = Vector2( 756, 78 )
+position = Vector2( 756, 80 )
 Teleport_Position = Vector2( 150, -464 )
 
 [node name="WalkingEnemy5" parent="Objects" instance=ExtResource( 8 )]
