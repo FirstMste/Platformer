@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://fonts/cinnamon cake.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://MaineMenu.gd" type="Script" id=2]
 [ext_resource path="res://TileMaps/Plateform_TileMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Menu/MenuSprite.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Menu/AnimationPlayer.gd" type="Script" id=5]
+[ext_resource path="res://Sounds/MenuMusic.wav" type="AudioStream" id=6]
 
 [sub_resource type="Animation" id=14]
 length = 0.001
@@ -203,6 +204,11 @@ tile_data = PoolIntArray( 65535, 7, 65537, 0, 7, 65538, 1, 7, 65538, 2, 7, 65539
 [node name="MenuSprite" parent="." instance=ExtResource( 4 )]
 position = Vector2( 332, 83 )
 script = null
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -8.0
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Quit" to="." method="_on_Quit_pressed"]

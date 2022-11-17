@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://TileMaps/Plateform_TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://TurtorialText.tscn" type="PackedScene" id=10]
 [ext_resource path="res://GOAL.tscn" type="PackedScene" id=11]
 [ext_resource path="res://LEVELS/level_1.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Sounds/World_Level_Music.wav" type="AudioStream" id=13]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 4 )
@@ -188,6 +189,11 @@ position = Vector2( 742, 164 )
 collision_layer = 0
 collision_mask = 2
 NEXTLEVEL = ExtResource( 12 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -8.0
+autoplay = true
 
 [editable path="Objects/Spikes3"]
 [editable path="Objects/Spikes5"]

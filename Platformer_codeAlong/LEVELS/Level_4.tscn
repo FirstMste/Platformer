@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://TileMaps/Plateform_TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TileMaps/BackDropTilemap.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://ChangeSkinBlue.tscn" type="PackedScene" id=11]
 [ext_resource path="res://resetSkin.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Objects/Traps/Spikes.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Sounds/Level_4_music.wav" type="AudioStream" id=14]
 
 [node name="Level_4" type="Node2D"]
 script = ExtResource( 5 )
@@ -311,3 +312,8 @@ position = Vector2( 1157, 157 )
 
 [node name="GOAL" parent="." instance=ExtResource( 4 )]
 position = Vector2( 986.062, 233.586 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -8.0
+autoplay = true

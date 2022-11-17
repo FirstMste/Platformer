@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://TileMaps/Plateform_TileMap.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://GOAL.tscn" type="PackedScene" id=10]
 [ext_resource path="res://LEVELS/Level_2.tscn" type="PackedScene" id=11]
 [ext_resource path="res://TurtorialText.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Sounds/Level_1_Music.wav" type="AudioStream" id=13]
 
 [node name="LEVEL1" type="Node2D"]
 script = ExtResource( 1 )
@@ -33,48 +34,6 @@ tile_data = PoolIntArray( -458753, 6, 196608, -393217, 6, 196608, -327681, 6, 19
 [node name="Water" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-
-[node name="Water2" parent="Water" instance=ExtResource( 4 )]
-position = Vector2( 299, 398 )
-
-[node name="Water3" parent="Water" instance=ExtResource( 4 )]
-position = Vector2( 281, 398 )
-
-[node name="Water4" parent="Water" instance=ExtResource( 4 )]
-position = Vector2( 263, 398 )
-
-[node name="Water5" parent="Water" instance=ExtResource( 4 )]
-position = Vector2( 245, 398 )
-
-[node name="Water6" parent="Water" instance=ExtResource( 4 )]
-position = Vector2( 227, 398 )
-
-[node name="Water7" parent="Water" instance=ExtResource( 4 )]
-position = Vector2( 209, 398 )
-
-[node name="Water8" parent="Water" instance=ExtResource( 4 )]
-position = Vector2( 191, 398 )
-
-[node name="Water9" parent="Water" instance=ExtResource( 4 )]
-position = Vector2( 173, 398 )
-
-[node name="Water10" parent="Water" instance=ExtResource( 4 )]
-position = Vector2( 155, 398 )
-
-[node name="Water11" parent="Water" instance=ExtResource( 4 )]
-position = Vector2( 137, 398 )
-
-[node name="Water12" parent="Water" instance=ExtResource( 4 )]
-position = Vector2( 119, 398 )
-
-[node name="Water13" parent="Water" instance=ExtResource( 4 )]
-position = Vector2( 101, 398 )
-
-[node name="Water14" parent="Water" instance=ExtResource( 4 )]
-position = Vector2( 83, 398 )
-
-[node name="Water15" parent="Water" instance=ExtResource( 4 )]
-position = Vector2( 81, 398 )
 
 [node name="Enemies" type="Control" parent="."]
 margin_right = 40.0
@@ -119,6 +78,45 @@ X_Distance = 45
 Y_Distance = 100
 Wrap = true
 
+[node name="Water" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 243, 396 )
+
+[node name="Water6" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 82, 396 )
+
+[node name="Water13" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 100, 396 )
+
+[node name="Water12" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 118, 396 )
+
+[node name="Water11" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 136, 396 )
+
+[node name="Water10" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 154, 396 )
+
+[node name="Water9" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 172, 396 )
+
+[node name="Water8" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 190, 396 )
+
+[node name="Water7" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 208, 396 )
+
+[node name="Water14" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 226, 396 )
+
+[node name="Water5" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 261, 396 )
+
+[node name="Water2" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 279, 396 )
+
+[node name="Water3" parent="Objects" instance=ExtResource( 4 )]
+position = Vector2( 297, 396 )
+
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 423, 479 )
 JUMP_RELEASE_FORCE = -10
@@ -126,3 +124,8 @@ JUMP_RELEASE_FORCE = -10
 [node name="GOAL" parent="." instance=ExtResource( 10 )]
 position = Vector2( 442, 486 )
 NEXTLEVEL = ExtResource( 11 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -8.0
+autoplay = true
